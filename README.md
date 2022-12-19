@@ -24,4 +24,15 @@ class BrokenDocumentsController < ApplicationController
   authorize_resource :document
 ```
 
+Ability has:
+```ruby
+class Ability
+  include CanCan::Ability
+
+  def initialize(session)
+    can :read, Document
+  end
+end
+```
+
 I believe this is a bug and a security issue.
